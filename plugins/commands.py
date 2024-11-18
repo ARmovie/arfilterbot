@@ -33,9 +33,9 @@ async def start(client, message):
             [
                 InlineKeyboardButton('🙆🏻 Hᴇʟᴘ 🦾', url=f"https://t.me/{temp.U_NAME}?start=help"),
             ],[
-            InlineKeyboardButton('⪦ 𝕄𝕆𝕍𝕀𝔼 ℂℍ𝔸ℕℕ𝔼𝕃 ⪧', url='https://t.me/real_MoviesAdda3')
+            InlineKeyboardButton('⪦ 𝕄𝕆𝕍𝕀𝔼 ℂℍ𝔸ℕℕ𝔼𝕃 ⪧', url='https://t.me/armoviechat')
             ],[
-            InlineKeyboardButton('💸 E𝐚𝐫𝐧 M𝐨𝐧𝐞𝐲 💸', callback_data="shortlink_info")
+            InlineKeyboardButton('💸 E𝐚𝐫𝐧 M𝐨𝐧𝐞𝐲 💸', callback_data="https://t.me/armoviechat")
             ],
             [
                 InlineKeyboardButton(text=DOWNLOAD_TEXT_NAME,url=DOWNLOAD_TEXT_URL)
@@ -43,7 +43,7 @@ async def start(client, message):
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
-        await asyncio.sleep(2) # 😢 https://github.com/LazyDeveloperr/LazyPrincess/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
+        await asyncio.sleep(2) # 😢 https://github.com/ARmovie/Prince/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
             await client.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, "Unknown"))       
@@ -65,12 +65,12 @@ async def start(client, message):
             InlineKeyboardButton('⚙ Sᴇᴛᴛɪɴɢs', callback_data='openSettings'),
             InlineKeyboardButton('♥️ Aʙᴏᴜᴛ', callback_data='about')
             ],[
-            InlineKeyboardButton('⪦ 𝕄𝕆𝕍𝕀𝔼 ℂℍ𝔸ℕℕ𝔼𝕃 ⪧', url='https://t.me/real_MoviesAdda3')
+            InlineKeyboardButton('⪦ 𝕄𝕆𝕍𝕀𝔼 ℂℍ𝔸ℕℕ𝔼𝕃 ⪧', url='https://t.me/armoviechat')
             ],[
-            InlineKeyboardButton('💸 E𝐚𝐫𝐧 M𝐨𝐧𝐞𝐲 💸', callback_data="shortlink_info")
+            InlineKeyboardButton('💸 E𝐚𝐫𝐧 M𝐨𝐧𝐞𝐲 💸', callback_data="https://t.me/armoviechat")
             ],[
                 InlineKeyboardButton(
-                    "🦋 SUBSCRIBE YT Channel 🦋", url='https://youtube.com/@LazyDeveloperr'
+                    "🦋 SUBSCRIBE YT Channel 🦋", url='https://youtube.com/@YouTube'
                 )
             ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -95,7 +95,7 @@ async def start(client, message):
             ],
              [
                 InlineKeyboardButton(
-                    "🦋 SUBSCRIBE YT Channel 🦋", url='https://youtube.com/@LazyDeveloperr'
+                    "🦋 SUBSCRIBE YT Channel 🦋", url='https://youtube.com/@YouTube'
                 )
             ]
         ]
@@ -128,13 +128,13 @@ async def start(client, message):
             InlineKeyboardButton('♥️ Aʙᴏᴜᴛ', callback_data='about')
             ],
         [
-            InlineKeyboardButton('⪦ 𝕄𝕆𝕍𝕀𝔼 ℂℍ𝔸ℕℕ𝔼𝕃 ⪧', url='https://t.me/real_MoviesAdda3')
+            InlineKeyboardButton('⪦ 𝕄𝕆𝕍𝕀𝔼 ℂℍ𝔸ℕℕ𝔼𝕃 ⪧', url='https://t.me/armoviechat')
         ],
         [
             InlineKeyboardButton('💸 E𝐚𝐫𝐧 M𝐨𝐧𝐞𝐲 💸', callback_data="shortlink_info")
         ],[
                 InlineKeyboardButton(
-                    "🦋 SUBSCRIBE YT Channel 🦋", url='https://youtube.com/@LazyDeveloperr'
+                    "🦋 SUBSCRIBE YT Channel 🦋", url='https://youtube.com/@YouTube'
                 )
             ]
         ]
@@ -199,7 +199,7 @@ async def start(client, message):
                                 InlineKeyboardButton('▶ Gen Stream / Download Link', callback_data=f'generate_stream_link:{file_id}'),
                             ],
                             [
-                                InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=f'https://t.me/LazyDeveloperr')
+                                InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=f'https://t.me/armoviechat')
                             ]
                         ]
                     )
@@ -548,7 +548,7 @@ async def delete_all_index(bot, message):
 @Client.on_callback_query(filters.regex(r'^autofilter_delete'))
 async def delete_all_index_confirm(bot, message):
     await Media.collection.drop()
-    await message.answer('♥️ Thank You LazyDeveloper ♥️')
+    await message.answer('♥️ Thank You sir ♥️')
     await message.message.edit('Succesfully Deleted All The Indexed Files.')
 
 @Client.on_message(filters.command('settings'))
